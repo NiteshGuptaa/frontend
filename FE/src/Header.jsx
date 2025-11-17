@@ -7,7 +7,7 @@ import { removeUser } from "./utils/userSlice";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
-  console.log(user);
+  // console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -44,10 +44,14 @@ const Header = () => {
                 className="btn btn-ghost btn-circle avatar"
               >
                 <div className="w-10 rounded-full">
-                  <img
-                    alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                  />
+                  {user.photoURL ? (
+                    <img alt="Profile Pic" src={user.photoURL} />
+                  ) : (
+                    <img
+                      alt="Profile Pic"
+                      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    />
+                  )}
                 </div>
               </div>
               <ul

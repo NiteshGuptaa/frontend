@@ -7,7 +7,7 @@ import { addFeed } from "../utils/feedSlice";
 const Feed = () => {
   const dispatch = useDispatch();
   const userFeed = useSelector((state) => state.feed);
-  console.log(userFeed);
+  // console.log(userFeed);
 
   const getFeed = async () => {
     try {
@@ -27,7 +27,7 @@ const Feed = () => {
   return (
     <>
       {userFeed && (
-        <div className="flex content-center  ">
+        <div className="flex justify-evenly content-center mx-8 flex-wrap">
           {userFeed.map((user) => {
             return (
               <div
